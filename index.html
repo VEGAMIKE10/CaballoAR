@@ -2,27 +2,73 @@
 <html lang="es">
 
 <head>
+  <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
 
-<script type="module"
-src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-</script>
+  <style>
+
+    body{
+      margin:0;
+      overflow:hidden;
+      background-color:#ffffff;
+    }
+
+    model-viewer{
+      width:100vw;
+      height:100vh;
+    }
+
+    #ar-button{
+
+      background-color:#ffffff;
+      border-radius:8px;
+      border:none;
+
+      position:absolute;
+      bottom:50px;
+      left:50%;
+
+      transform:translateX(-50%);
+
+      padding:12px 18px;
+
+      font-size:16px;
+      font-weight:bold;
+
+      cursor:pointer;
+
+      box-shadow:0 2px 10px rgba(0,0,0,0.25);
+
+    }
+
+  </style>
 
 </head>
 
-<body style="margin:0;">
+<body>
 
 <model-viewer
-src="modelocaballo3dconejes.glb"
 
-ar
-ar-modes="scene-viewer webxr quick-look"
+  src="modelocaballo3dconejes.glb"
 
-camera-controls
-auto-rotate
+  ar
+  ar-modes="scene-viewer webxr quick-look"
 
-style="width:100vw; height:100vh;">
+  camera-controls
+  auto-rotate
+
+  shadow-intensity="1"
+
+  environment-image="neutral"
+
+>
+
+<button slot="ar-button" id="ar-button">
+  Ver en AR
+</button>
 
 </model-viewer>
 
