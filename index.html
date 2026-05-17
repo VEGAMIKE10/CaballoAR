@@ -27,12 +27,6 @@ model-viewer{
 
 #ar-button{
 
-    background-color:white;
-
-    border-radius:8px;
-
-    border:1px solid black;
-
     position:absolute;
 
     bottom:30px;
@@ -47,6 +41,14 @@ model-viewer{
 
     font-weight:bold;
 
+    background:white;
+
+    border:2px solid black;
+
+    border-radius:10px;
+
+    z-index:100;
+
 }
 
 </style>
@@ -59,23 +61,38 @@ model-viewer{
 
 src="modelocaballo3dconejes.glb"
 
-ar
-
-ar-modes="webxr scene-viewer"
-
 camera-controls
 
 auto-rotate
 
 >
 
-<button slot="ar-button" id="ar-button">
+</model-viewer>
+
+<button id="ar-button">
 
 Ver en AR
 
 </button>
 
-</model-viewer>
+<script>
+
+const button = document.getElementById('ar-button');
+
+button.addEventListener('click', () => {
+
+const sceneViewerUrl =
+'intent://arvr.google.com/scene-viewer/1.0?file=' +
+encodeURIComponent(
+'https://vegamike10.github.io/CaballoAR/modelocaballo3dconejes.glb'
+) +
+'&mode=ar_preferred#Intent;scheme=https;package=com.google.android.googlequicksearchbox;end;';
+
+window.location.href = sceneViewerUrl;
+
+});
+
+</script>
 
 </body>
 
