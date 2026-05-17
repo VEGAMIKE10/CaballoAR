@@ -2,52 +2,62 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
 
-  <script type="module"
-    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
-  </script>
+<meta charset="UTF-8">
 
-  <style>
+<script type="module"
+src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+</script>
 
-    body{
-      margin:0;
-      overflow:hidden;
-      background-color:#ffffff;
-    }
+<style>
 
-    model-viewer{
-      width:100vw;
-      height:100vh;
-    }
+body{
 
-    #ar-button{
+    margin:0;
+    overflow:hidden;
+    background-color:#ffffff;
 
-      z-index:100;
+}
 
-border:2px solid #000000;
-      background-color:#ffffff;
-      border-radius:8px;
-      border:none;
+model-viewer{
 
-      position:absolute;
-      bottom:50px;
-      left:50%;
+    width:100vw;
+    height:100vh;
+    background-color:#ffffff;
 
-      transform:translateX(-50%);
+}
 
-      padding:18px 28px;
+#ar-button{
 
-      font-size:22px;
-      font-weight:bold;
+    background-color:#ffffff;
 
-      cursor:pointer;
+    border-radius:10px;
 
-      box-shadow:0 2px 10px rgba(0,0,0,0.25);
+    border:2px solid #000000;
 
-    }
+    position:absolute;
 
-  </style>
+    bottom:50px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:18px 28px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    z-index:100;
+
+    box-shadow:0 2px 10px rgba(0,0,0,0.25);
+
+}
+
+</style>
 
 </head>
 
@@ -55,26 +65,36 @@ border:2px solid #000000;
 
 <model-viewer
 
-  src="modelocaballo3dconejes.glb"
+    src="modelocaballo3dconejes.glb"
 
-  ar
- ar-modes="scene-viewer webxr quick-look"
- 
-  
-  camera-controls
-  auto-rotate
+    ar
 
-  shadow-intensity="1"
+    ar-modes="scene-viewer webxr"
 
-  environment-image="neutral"
+    ar-scale="fixed"
+
+    camera-controls
+
+    auto-rotate
+
+    shadow-intensity="1"
+
+    environment-image="neutral"
+
+    reveal="interaction"
+
+    loading="eager"
 
 >
 
 <button slot="ar-button" id="ar-button">
-  Ver en AR
+
+    Visualizar en Realidad Aumentada
+
 </button>
 
 </model-viewer>
 
 </body>
+
 </html>
